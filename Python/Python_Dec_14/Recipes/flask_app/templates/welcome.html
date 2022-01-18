@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Welcome</title>
+</head>
+<body>
+    <h1>Welcome {{ user.first_name }}</h1>
+    <h3>These are the recipes</h3>
+    <table class="table justify-center col-6 text-center">
+        <th>
+            <tr>
+                <th> Name </th>
+                <th> Under 30 Minutes </th>
+                <th> Actions </th>
+            </tr>
+        </th>
+        <tbody>
+            <th>
+                {% for recipe in one_recipe %}
+                <tr>
+                    <td>{{ recipe.name }}</td>
+                    <td>{{ recipe.cook_time }}</td>
+                    {% if recipe.user_id == user.id %}
+                    <td>
+                        <a href="/recipe/{{recipe.id}}"> View Instructions</a>
+                        <a href="/edit/recipe/{{recipe.id}}"> Edit</a>
+                        <a href="/delete/recipe/{{recipe.id}}"> Delete</a>
+                    </td>
+                    {% else %}
+                        <td><a href="/recipe/{{recipe.id}}"> View Instructions</a></td>
+                    {% endif %}
+                    </tr>
+                {% endfor %}
+            </th>
+        </tbody>    
+    </table>
+    <a href="/create" class="btn btn-success">Create</a>
+    <a href="/logout" class="btn btn-success"> Log Out </a>
+</body>
+</html>

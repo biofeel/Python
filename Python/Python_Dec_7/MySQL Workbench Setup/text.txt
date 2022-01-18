@@ -1,0 +1,16 @@
+INSERT - 
+
+insert into table_name (column_name1, column_name2) 
+Values('column1_value', 'column2_value');
+
+SELECT - 
+select * from ();
+
+UPDATE - 
+update users.user set
+first_name = "name"
+where is = 1;
+
+DELETE - 
+set sql_safe_updates = 0;
+

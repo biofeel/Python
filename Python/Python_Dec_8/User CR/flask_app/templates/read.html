@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Read One</title>
+</head>
+<body>
+    <h1 class="text-center"> Hello {{ user.full_name() }}</h1>
+    <table class="table justify-center col-6 text-center">
+        <th>
+            <tr>
+                <th> ID </th>
+                <th> First Name </th>
+                <th> Last Name </th>
+                <th> Email </th>
+                <th> Created At</th>
+            </tr>
+        </th>
+        <tbody>
+            <th>
+                <tr>
+                    <td>{{ user.id }}</td>
+                    <td>{{ user.first_name }}</td>
+                    <td>{{ user.last_name }}</td>
+                    <td>{{ user.email }}</td>
+                    <td>{{ user.created_at }}</td>
+                </tr>
+            </th>
+        </tbody>    
+    </table>
+    <a href="/{{ user.id }}/edit_user"> Edit </a>
+    <a href="/{{ user.id }}/delete_one"> Delete </a>
+    <a href="/users"> Home </a>
+</body>
+</html>

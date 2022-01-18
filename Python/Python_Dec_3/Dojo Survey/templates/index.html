@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Dojo Survey</title>
+
+</head>
+
+<body>
+    <div class="flex justify-center col-5 mx-auto">
+        <form action="/result" class="bg-info p-3 rounded" method="post">
+            <div class="form-group col-lg-6 col-md-6 col-sm-6">
+                <label for="form-group">Name</label>
+                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Name" name="name">
+            </div>
+            <div class="form-group col-lg-6 col-md-6 col-sm-6">
+                <label for="inputlocation">Locations</label>
+                <select class="form-control" id="dojolocation" name="dojo_location">
+                    <option value="default">--- Select a location ---</option>
+                    <option value="Online">Online</option>
+                    <option value="Seattle">Seattle</option>
+                    <option value="Los Angeles">Los Angeles</option>
+                    <option value="Dallas">Dallas</option>
+                    <option value="Chicago">Chicago</option>
+                </select>
+            </div>
+            <div class="form-group col-lg-6 col-md-6 col-sm-6">
+                <label for="inputlocation">Favorite Language</label>
+                <select class="form-control" id="favlanguage" name="favlanguage">
+                    <option value="default">--- Select a language ---</option>
+                    <option value="Python">Python</option>
+                    <option value="Java">Java</option>
+                    <option value="HTML">HTML</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div class="ml-3 form-group">
+                <label for="exampleFormControlTextarea1">Comments (Optional)</label>
+                <textarea class="form-control col-lg-6 col-md-4 col-sm-4" id="Comments" rows="2" name="comments"></textarea>
+            </div>
+            <button type="submit" class="btn btn-dark" value="Submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

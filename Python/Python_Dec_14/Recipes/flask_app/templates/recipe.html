@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Welcome</title>
+</head>
+<body>
+    <h1>Welcome {{ user.first_name }}</h1>
+    <a href="/welcome" class="btn btn-success"> Dashboard</a>
+    <a href="/logout" class="btn btn-success"> Log Out </a>
+
+    <div class="card">
+        <div class="card-body">
+            <h2 class="card-title">{{show_recipe.name}}</h2>
+            <p class="card-text">Description:  {{show_recipe.description}}</p>
+            <p class="card-text">Under 30 Minutes: {{show_recipe.cook_time}}</p>
+            <p class="card-text">Instruction:  {{show_recipe.instruction}}</p>
+            <p class="card-text">Made On:  {{show_recipe.date_made}}</p>
+        </div>
+    </div>
+</body>
+</html>

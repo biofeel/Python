@@ -1,0 +1,19 @@
+*{
+    padding: 0;
+    margin: 0;
+    vertical-align: top;
+    box-sizing: border-box;
+}
+
+.color1 {
+    background-color: rebeccapurple;
+}
+
+.color2 {
+    background-color: peachpuff;
+}
+
+table tr td {
+    width: 60px;
+    height: 60px;
+}

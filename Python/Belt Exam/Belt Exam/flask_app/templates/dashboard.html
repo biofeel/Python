@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Band Together</title>
+</head>
+<body>
+    <h1>Rock On {{ user.first_name }} {{ user.last_name }} !!!</h1>
+
+    <a href="/logout" class="btn btn-success"> Log Out </a>
+    <a href="/create" class="btn btn-success"> Create </a>
+    {% for band in one_band %}
+        {% if band.user_id == user.id %}
+            <a href="/band/{{band.id}}" class="btn btn-success"> My Bands </a>
+        {% endif %}
+    {% endfor %}
+    <h2>All bands</h1>
+    <table class="table justify-center col-6 text-center">
+        <th>
+            <tr>
+                <th> Band name </th>
+                <th> Founding Member </th>
+                <th> Genre</th>
+                <th> Actions </th>
+            </tr>
+        </th>
+        <tbody>
+            <th>
+                {% for band in one_band %}
+                <tr>
+                    <td>{{ band.band_name }}</td>
+                    <td>{{ band.user_id}}</td >
+                    <td>{{ band.music_genre }}</td>
+                    {% if band.user_id == user.id %}
+                    <td>
+                        <a href="/edit/band/{{band.id}}"> Edit</a>
+                        <a href="/delete/band/{{band.id}}"> Delete</a>
+                    </td>
+                    {% endif %}
+                    </tr>
+                {% endfor %}
+            </th>
+        </tbody>    
+    </table>
+</body>
+</html>
